@@ -29,6 +29,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "ramda": "^0.25.0"
   }
 }
