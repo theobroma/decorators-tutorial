@@ -1,20 +1,19 @@
-import * as R from 'ramda';
+// write the function isAnagram
+var fn = function(test, original) {
+  return (
+    original
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('') ===
+    test
+      .toLowerCase()
+      .split('')
+      .sort()
+      .join('')
+  );
+};
 
-const person = { name: 'andrew', age: 26 };
-
-const ageLens = R.lensProp('age');
-
-//console.log(R.view(ageLens, person));
-
-const res = R.assoc('c', 3, { a: 1, b: 2, c: 7 }); //=> {a: 1, b: 2, c: 3}
-
-const p = R.path(['a', 'b', 'c', 'd'], {
-  a: {
-    b: {
-      c: { d: 999 }
-    }
-  }
-}); //=> 2
-
-console.log(p);
-
+// const res = isAnagram('foefet', 'toffee');
+// console.log(res);
+module.exports = fn;
