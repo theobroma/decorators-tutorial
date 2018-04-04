@@ -1,30 +1,10 @@
-// var assert = require('assert');
+import feast from '../src/app/index';
+import { assert } from 'chai';
 
-// describe('Array', function() {
-//   describe('#indexOf()', function() {
-//     it('should return -1 when the value is not present', function() {
-//       assert.equal([1, 2, 3].indexOf(4), -1);
-//     });
-//   });
-// });
-var chai = require('chai');
-var assert = chai.assert; // Using Assert style
-var expect = chai.expect; // Using Expect style
-var should = chai.should(); // Using Should style
-
-var fn = require('../src/app/index');
-
-// const res = fn('foefet', 'toffee');
-// console.log(res);
-
-describe('test', () => {
-  it('test1', () => {
-    assert.equal(fn('foefet', 'toffee'), true);
-  });
-  it('test2', () => {
-    assert.equal(fn('Buckethead', 'DeathCubeK'), true);
-  });
-  it('test3', () => {
-    assert.equal(fn('dumble', 'bumble'), false);
+describe('feast', () => {
+  it('basic tests', () => {
+    assert.equal(feast('great blue heron', 'garlic naan'), true);
+    assert.equal(feast('chickadee', 'chocolate cake'), true);
+    assert.equal(feast('brown bear', 'bear claw'), false);
   });
 });

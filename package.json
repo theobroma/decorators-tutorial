@@ -5,9 +5,12 @@
   "main": "index.js",
   "author": "O'Brian",
   "license": "MIT",
+  "babel": {
+    "presets": ["stage-0", "env"]
+  },
   "scripts": {
     "start": "webpack-dev-server --history-api-fallback --inline --progress --port 3000",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec --require babel-core/register test/test.js"
   },
   "devDependencies": {
     "babel": "^6.23.0",
