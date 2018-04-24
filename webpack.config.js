@@ -12,7 +12,7 @@ module.exports = (function makeConfig() {
     filename: '[name].[hash].js'
   };
   config.resolve = {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css']
   };
 
   config.devtool = 'eval-source-map';
@@ -39,8 +39,18 @@ module.exports = (function makeConfig() {
           fallback: 'style-loader',
           use: [
             { loader: 'css-loader' },
-            { loader: 'sass-loader' }
-            // { loader: 'postcss-loader' }
+            { loader: 'sass-loader' },
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                plugins: loader => [
+                  require('postcss-cssnext')(),
+                  require('cssnano')(),
+                  require('postcss-reporter')({ clearReportedMessages: true })
+                ]
+              }
+            }
           ]
         })
       }
