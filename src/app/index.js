@@ -1,12 +1,14 @@
 import time from './time';
 
-const feast = (beast, dish) => {
-  const fb = beast.substr(0, 1);
-  const lb = beast.substr(-1, 1);
-  const fd = dish.substr(0, 1);
-  const ld = dish.substr(-1, 1);
-  return fb + lb === fd + ld;
+const averages = numbers => {
+  const arr = numbers || [];
+  const res = arr.map(function(n, i) {
+    return (arr[i] + arr[i + 1]) / 2;
+  });
+  res.pop();
+  return res;
 };
 
-feast('great blue heron', 'garlic naan');
-export default feast;
+const res = averages([1, 3, 5, 1, -10]);
+console.log(res);
+export default averages;

@@ -1,10 +1,10 @@
-import feast from '../src/app/index';
+import averages from '../src/app/index';
 import { assert } from 'chai';
 
-describe('feast', () => {
-  it('basic tests', () => {
-    assert.equal(feast('great blue heron', 'garlic naan'), true);
-    assert.equal(feast('chickadee', 'chocolate cake'), true);
-    assert.equal(feast('brown bear', 'bear claw'), false);
+describe('solution', function() {
+  it('Basic Tests', function() {
+    assert.deepEqual(averages([2, 2, 2, 2, 2]), [2, 2, 2, 2]);
+    assert.deepEqual(averages([2, -2, 2, -2, 2]), [0, 0, 0, 0]);
+    assert.deepEqual(averages([1, 3, 5, 1, -10]), [2, 4, 3, -4.5]);
   });
 });
