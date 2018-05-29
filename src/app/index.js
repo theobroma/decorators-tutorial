@@ -16,3 +16,4 @@ clickStream.subscribe(x => console.log(x));
 // doubleClickStream.throttle(1000).subscribe(suggestion =>{
 //   label.textContent='-';
 // });
+console.log('Hello123112312123123312312323');
